@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-         stage('Cleanup previous build data') {
+        stage('Cleanup previous build data') {
             steps {
                 echo 'Cleaning up workspace...'
                 cleanWs()
@@ -16,9 +16,10 @@ pipeline {
             }
         }
 
-	stage('Clone Successful') {
+        stage('Clone Successful') {
             steps {
                 echo 'Git repository cloned successfully'
             }
         }
+    }
 }
