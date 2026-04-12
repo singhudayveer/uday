@@ -21,3 +21,4 @@ pipeline {
                 echo 'Git repository cloned successfully'
             }
         }
+}
