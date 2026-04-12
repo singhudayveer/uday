@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  web1:
+    image: nginx:latest
+    container_name: front-test-1
+    ports:
+      - "8081:80"
+    volumes:
+      - ./html:/usr/share/nginx/html
+
+  web2:
+    image: nginx:latest
+    container_name: front-test-2
+    ports:
+      - "8082:80"
+    volumes:
+      - ./html:/usr/share/nginx/html
+
