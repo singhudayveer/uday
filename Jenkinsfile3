@@ -1,0 +1,44 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Clean Workspace') {
+            steps {
+                echo 'Cleaning workspace...'
+                cleanWs()
+            }
+        }
+
+        stage('Clone Repository') {
+            steps {
+                echo 'Pulling code from GitHub...'
+                git branch: 'main', url: 'https://github.com/singhudayveer/uday.git'
+            }
+        }
+
+        stage('Check Files') {
+            steps {
+                echo 'Listing repository files'
+                sh 'ls -l'
+            }
+        }
+
+        stage('Run HTML Test') {
+            steps {
+                echo 'Checking hom.html file'
+                sh 'cat hom.html'
+            }
+        }
+
+    }
+
+    post {
+        success {
+            echo 'Pipeline executed successfully'
+        }
+        failure {
+            echo 'Pipeline failed'
+        }
+    }
+}
