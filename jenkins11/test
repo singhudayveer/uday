@@ -1,0 +1,15 @@
+pipeline{
+         agent any {
+                 stages {
+                   stage('Git Clone'){
+                         echo "git clone https://github.com/singhudayveer/uday.git "
+                                     }
+                    stage ('Build code'){
+                       echo ("mvn clean package")
+                                }
+                     stage ('Deploy'){
+                       echo(" deploy code")
+                                   }
+                      }
+                 }
+           }
